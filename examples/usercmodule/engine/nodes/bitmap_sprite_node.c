@@ -15,7 +15,7 @@ STATIC void bitmap_sprite_node_class_print(const mp_print_t *print, mp_obj_t sel
 
 mp_obj_t bitmap_sprite_node_class_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args){
     ENGINE_INFO_PRINTF("New BitmapSpriteNode");
-    
+
     // Check that there's an argument that's hopefully a reference to the inheriting subclass
     mp_arg_check_num(n_args, n_kw, 1, 1, true);
 
@@ -73,10 +73,10 @@ STATIC mp_obj_t bitmap_sprite_node_class_draw(mp_obj_t self_in, mp_obj_t camera_
 
     engine_camera_node_class_obj_t *camera = MP_OBJ_TO_PTR(camera_obj);
     vector3_class_obj_t *camera_position = camera->position;
-    
-    camera_position->z += 0.05;
-    camera_position->x = (20.0 * cos(camera_position->z));
-    camera_position->y = (20.0 * sin(camera_position->z));
+
+    camera_position->z = mp_obj_new_float(mp_obj_get_float(camera_position->z) + 0.05);
+    camera_position->x = mp_obj_new_float(20.0 * cos(mp_obj_get_float(camera_position->z)));
+    camera_position->y = mp_obj_new_float(20.0 * sin(mp_obj_get_float(camera_position->z)));
 
     engine_draw_pixel(0b1111100000000000, 128/4, 128/4, camera);
 

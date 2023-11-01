@@ -45,7 +45,26 @@ class MyRect2D(Rectangle2DNode):
 a = MySprite()
 b = MyRect2D()
 c = MyNodeCam()
-print(b.width)
+print("Made everything")
+b.rect.pos.x = 4
+print("Set position")
+print(b.rect.pos.x)
+
+class MyRect2DPrimitive(Rectangle):
+    def __init__(self):
+        pass
+        # self.width = 5
+        # self.position.x = 10
+    
+    def tick(self):
+        pass
+        # print("hi from sprite!")
+        
+
+rectPrimitive = MyRect2DPrimitive()
+
+rectPrimitive.pos.x = 5
+print(rectPrimitive.pos.x)
 
 # a.position.x = 0
 # b.position.x = 10
@@ -54,7 +73,7 @@ print(b.width)
 # print(dir(v))
 # print(v, end='')
 
-engine.start()
+#engine.start()
 
 
 # class MyNodeA(EmptyNode):

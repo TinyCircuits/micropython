@@ -116,10 +116,7 @@ STATIC void rectangle_2d_class_attr(mp_obj_t self_in, qstr attribute, mp_obj_t *
     if(destination[0] == MP_OBJ_NULL){          // Load
         switch(attribute){
             case MP_QSTR_rect:
-                destination[0] = m_new_obj(rectangle_class_obj_t);
-                ((rectangle_class_obj_t*)MP_OBJ_TO_PTR(destination[0]))->base.type = &rectangle_class_type;
-                ((rectangle_class_obj_t*)MP_OBJ_TO_PTR(destination[0]))->pos = ((rectangle_class_obj_t*)MP_OBJ_TO_PTR(self->rect))->pos;
-                ((rectangle_class_obj_t*)MP_OBJ_TO_PTR(destination[0]))->size = ((rectangle_class_obj_t*)MP_OBJ_TO_PTR(self->rect))->size;
+                destination[0] = self->rect;
             break;
             // case MP_QSTR_width:
             //     destination[0] = self->width;
@@ -137,6 +134,7 @@ STATIC void rectangle_2d_class_attr(mp_obj_t self_in, qstr attribute, mp_obj_t *
             case MP_QSTR_rect:
                 //self->width = destination[1];
                 ENGINE_WARNING_PRINTF("Setting rect not implemented!");
+                self->rect = destination[1];
             break;
             default:
                 return; // Fail

@@ -37,6 +37,14 @@ mp_obj_t rectangle_class_new(const mp_obj_type_t *type, size_t n_args, size_t n_
     return MP_OBJ_FROM_PTR(self);
 }
 
+mp_obj_t rectangle_class_copy(const rectangle_class_obj_t *r) {
+    rectangle_class_obj_t* ret = m_new_obj(rectangle_class_obj_t);
+    ret->base.type = &rectangle_class_type;
+    ret->pos = r->pos;
+    ret->size = r->size;
+    return MP_OBJ_FROM_PTR(ret);
+}
+
 
 // Class methods
 STATIC mp_obj_t rectangle_class_area(mp_obj_t self_in){

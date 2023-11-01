@@ -13,5 +13,6 @@ typedef struct{
 extern const mp_obj_type_t vector2_class_type;
 
 mp_obj_t vector2_class_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
+mp_obj_t vector2_class_copy(const vector2_class_obj_t *v);
 
 #endif  // VECTOR2_H

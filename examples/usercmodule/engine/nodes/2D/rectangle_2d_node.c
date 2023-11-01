@@ -128,9 +128,6 @@ STATIC void rectangle_2d_class_attr(mp_obj_t self_in, qstr attribute, mp_obj_t *
         }
     }else if(destination[1] != MP_OBJ_NULL){    // Store
         switch(attribute){
-            case MP_QSTR_position:
-                ENGINE_WARNING_PRINTF("Setting position not implemented!");
-            break;
             case MP_QSTR_rect:
                 //self->width = destination[1];
                 ENGINE_WARNING_PRINTF("Setting rect not implemented!");

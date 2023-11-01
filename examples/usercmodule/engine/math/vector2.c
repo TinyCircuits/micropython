@@ -29,6 +29,13 @@ mp_obj_t vector2_class_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw
     return MP_OBJ_FROM_PTR(self);
 }
 
+mp_obj_t vector2_class_copy(const vector2_class_obj_t *v) {
+    vector2_class_obj_t* ret = m_new_obj(vector2_class_obj_t);
+    ret->base.type = &vector2_class_type;
+    ret->x = v->x;
+    ret->y = v->y;
+    return MP_OBJ_FROM_PTR(ret);
+}
 
 // Class methods
 STATIC mp_obj_t vector2_class_dot(mp_obj_t self_in, mp_obj_t vector_b){

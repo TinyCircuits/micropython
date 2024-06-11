@@ -27,6 +27,8 @@
 // This file enables and configures features common to all variants
 // other than "minimal".
 
+#define MICROPY_TRACKED_ALLOC          (1)
+
 // Send raise KeyboardInterrupt directly from the signal handler rather than
 // scheduling it into the VM.
 #define MICROPY_ASYNC_KBD_INTR         (1)
@@ -38,7 +40,8 @@
 
 // Enable floating point by default.
 #ifndef MICROPY_FLOAT_IMPL
-#define MICROPY_FLOAT_IMPL             (MICROPY_FLOAT_IMPL_DOUBLE)
+// #define MICROPY_FLOAT_IMPL             (MICROPY_FLOAT_IMPL_DOUBLE)
+#define MICROPY_FLOAT_IMPL             (MICROPY_FLOAT_IMPL_FLOAT)
 #endif
 
 // Don't use native _Float16 because it increases code size by a lot.
@@ -48,7 +51,8 @@
 
 // Enable arbitrary precision long-int by default.
 #ifndef MICROPY_LONGINT_IMPL
-#define MICROPY_LONGINT_IMPL           (MICROPY_LONGINT_IMPL_MPZ)
+// #define MICROPY_LONGINT_IMPL           (MICROPY_LONGINT_IMPL_MPZ)
+#define MICROPY_LONGINT_IMPL           (MICROPY_LONGINT_IMPL_LONGLONG)
 #endif
 
 // Enable use of C libraries that need read/write/lseek/fsync, e.g. axtls.

@@ -236,6 +236,7 @@ set(PICO_SDK_COMPONENTS
     pico_util
     tinyusb_common
     tinyusb_device
+    hardware_exception      # Added
 )
 
 if(PICO_ARM)

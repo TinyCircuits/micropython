@@ -9,7 +9,7 @@ MICROPY_FORCE_32BIT = 0
 MICROPY_USE_READLINE = 1
 
 # btree module using Berkeley DB 1.xx
-MICROPY_PY_BTREE = 1
+MICROPY_PY_BTREE = 0
 
 # _thread module using pthreads
 MICROPY_PY_THREAD = 1

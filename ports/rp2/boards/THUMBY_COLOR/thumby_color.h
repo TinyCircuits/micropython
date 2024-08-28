@@ -19,6 +19,9 @@
 // For board detection
 #define THUMBY_COLOR
 
+// Make startup of processor longer because oscillator startup is slow
+#define PICO_XOSC_STARTUP_DELAY_MULTIPLIER 64
+
 // --- UART ---
 #ifndef PICO_DEFAULT_UART
 #define PICO_DEFAULT_UART 0

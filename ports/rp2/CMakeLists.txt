@@ -250,6 +250,9 @@ elseif(PICO_RISCV)
     )
 endif()
 
+pico_set_float_implementation(${MICROPY_TARGET} pico)
+pico_set_double_implementation(${MICROPY_TARGET} pico)
+
 # # Use our custom pico_float_micropython float implementation.  This is needed for two reasons:
 # # - to fix inf handling in pico-sdk's __wrap___aeabi_fadd();
 # # - so we can use our own libm functions, to fix inaccuracies in the pico-sdk versions.

@@ -45,9 +45,13 @@ INC += -I$(TOP)
 INC += -I$(BUILD)
 INC += -I$(VARIANT_DIR)
 
-CFLAGS += -std=c99 -Wall -Werror -Wdouble-promotion -Wfloat-conversion
-CFLAGS += -Os -DNDEBUG
-CFLAGS += $(INC)
+# CFLAGS += -std=c99 -Wall -Werror -Wdouble-promotion -Wfloat-conversion
+# CFLAGS += -Os -DNDEBUG
+# CFLAGS += $(INC)
+
+CFLAGS += -std=c99 -Werror -Wfloat-conversion
+# CFLAGS += -Os -DNDEBUG
+CFLAGS += $(INC) -g
 
 EXPORTED_FUNCTIONS_EXTRA += ,\
 	_mp_js_do_exec,\
@@ -91,8 +95,13 @@ JSFLAGS += -s EXPORTED_RUNTIME_METHODS="\
 	ccall,\
 	cwrap,\
 	FS$(EXPORTED_RUNTIME_METHODS_EXTRA)"
+# JSFLAGS += --js-library library.js
+# JSFLAGS += -s SUPPORT_LONGJMP=emscripten
+# JSFLAGS += -s MODULARIZE -s EXPORT_NAME=_createMicroPythonModule
+
 JSFLAGS += --js-library library.js
-JSFLAGS += -s SUPPORT_LONGJMP=emscripten
+# JSFLAGS += -s SUPPORT_LONGJMP=emscripten -s SAFE_HEAP=1 -s ASSERTIONS=2 -g -sEMULATE_FUNCTION_POINTER_CASTS
+JSFLAGS += -s SUPPORT_LONGJMP=emscripten -sEMULATE_FUNCTION_POINTER_CASTS
 JSFLAGS += -s MODULARIZE -s EXPORT_NAME=_createMicroPythonModule
 
 ################################################################################

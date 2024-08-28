@@ -157,6 +157,7 @@ export async function loadMicroPython(options) {
                 "number",
                 ["pointer", "number", "pointer"],
                 [buf, len, value],
+                { async: true }
             );
             Module._free(buf);
             const ret = proxy_convert_mp_to_js_obj_jsside_with_free(value);

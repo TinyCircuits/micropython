@@ -234,8 +234,10 @@ set(PICO_SDK_COMPONENTS
     pico_time
     pico_unique_id
     pico_util
+    pico_rand               # Added
     tinyusb_common
     tinyusb_device
+    tinyusb_host            # Added
     hardware_exception      # Added
 )
 

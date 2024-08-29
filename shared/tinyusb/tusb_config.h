@@ -29,6 +29,30 @@
 
 #include "py/mpconfig.h"
 
+
+
+// Size of buffer to hold descriptors and other data used for enumeration
+#define CFG_TUH_ENUMERATION_BUFSIZE 256
+
+#ifndef CFG_TUH_MEM_SECTION
+#define CFG_TUH_MEM_SECTION
+#endif
+
+#ifndef CFG_TUH_MEM_ALIGN
+#define CFG_TUH_MEM_ALIGN           __attribute__ ((aligned(4)))
+#endif
+
+#define CFG_TUH_ENABLED             1
+// #define CFG_TUH_HUB                 1
+// // max device support (excluding hub device)
+// #define CFG_TUH_DEVICE_MAX          (CFG_TUH_HUB ? 4 : 1) // hub typically has 4 ports
+
+// #define CFG_TUH_HID                 (3*CFG_TUH_DEVICE_MAX)
+// #define CFG_TUH_HID_EPIN_BUFSIZE    64
+// #define CFG_TUH_HID_EPOUT_BUFSIZE   64
+
+
+
 #if MICROPY_HW_ENABLE_USBDEV
 
 #ifndef MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE

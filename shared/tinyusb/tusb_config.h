@@ -30,7 +30,7 @@
 #include "py/mpconfig.h"
 
 
-
+// --- Added for engine
 // Size of buffer to hold descriptors and other data used for enumeration
 #define CFG_TUH_ENUMERATION_BUFSIZE 256
 
@@ -47,7 +47,7 @@
 // Size of buffer to hold descriptors and other data used for enumeration
 // #define CFG_TUH_ENUMERATION_BUFSIZE 256
 #define CFG_TUH_CDC                 1 // CDC ACM
-
+// ---
 
 //------------- CDC -------------//
 
@@ -113,6 +113,12 @@
 #define CFG_TUD_CDC_RX_BUFSIZE  ((CFG_TUD_MAX_SPEED == OPT_MODE_HIGH_SPEED) ? 512 : 256)
 #define CFG_TUD_CDC_TX_BUFSIZE  ((CFG_TUD_MAX_SPEED == OPT_MODE_HIGH_SPEED) ? 512 : 256)
 #endif
+
+// --- Added for engine
+// Make the host use the same buffer sizes as the device
+#define CFG_TUH_CDC_RX_BUFSIZE  CFG_TUD_CDC_RX_BUFSIZE
+#define CFG_TUH_CDC_TX_BUFSIZE  CFG_TUD_CDC_TX_BUFSIZE
+// ---
 
 // MSC Configuration
 #if CFG_TUD_MSC

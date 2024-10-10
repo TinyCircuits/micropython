@@ -92,10 +92,15 @@
 #if MICROPY_VARIANT_ENABLE_JS_HOOK
 #define MICROPY_VM_HOOK_COUNT (10)
 #define MICROPY_VM_HOOK_INIT static uint vm_hook_divisor = MICROPY_VM_HOOK_COUNT;
+// #define MICROPY_VM_HOOK_POLL if (--vm_hook_divisor == 0) { \
+//         vm_hook_divisor = MICROPY_VM_HOOK_COUNT; \
+//         extern void mp_js_hook(void); \
+//         mp_js_hook(); \
+// }
 #define MICROPY_VM_HOOK_POLL if (--vm_hook_divisor == 0) { \
         vm_hook_divisor = MICROPY_VM_HOOK_COUNT; \
-        extern void mp_js_hook(void); \
-        mp_js_hook(); \
+        extern void new_hook(void); \
+        new_hook(); \
 }
 #define MICROPY_VM_HOOK_LOOP MICROPY_VM_HOOK_POLL
 #define MICROPY_VM_HOOK_RETURN MICROPY_VM_HOOK_POLL

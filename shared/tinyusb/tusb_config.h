@@ -29,6 +29,31 @@
 
 #include "py/mpconfig.h"
 
+
+// --- ENGINE ---
+// Size of buffer to hold descriptors and other data used for enumeration
+#define CFG_TUH_ENUMERATION_BUFSIZE 256
+
+#ifndef CFG_TUH_MEM_SECTION
+#define CFG_TUH_MEM_SECTION
+#endif
+
+#ifndef CFG_TUH_MEM_ALIGN
+#define CFG_TUH_MEM_ALIGN           __attribute__ ((aligned(4)))
+#endif
+
+#define CFG_TUH_ENABLED             1
+
+// Size of buffer to hold descriptors and other data used for enumeration
+// #define CFG_TUH_ENUMERATION_BUFSIZE 256
+#define CFG_TUH_CDC                 1 // CDC ACM
+
+// Make the host use the same buffer sizes as the device
+#define CFG_TUH_CDC_RX_BUFSIZE  CFG_TUD_CDC_RX_BUFSIZE
+#define CFG_TUH_CDC_TX_BUFSIZE  CFG_TUD_CDC_TX_BUFSIZE
+// --- ENGINE ---
+
+
 #if MICROPY_HW_ENABLE_USBDEV
 
 #ifndef MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE

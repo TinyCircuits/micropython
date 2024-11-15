@@ -34,7 +34,9 @@
 // Variant-specific definitions.
 #include "mpconfigvariant.h"
 
+// Added for engine
 #define MICROPY_TRACKED_ALLOC (1)
+#define MICROPY_PY_DEFLATE_COMPRESS (1)
 
 #ifndef MICROPY_CONFIG_ROM_LEVEL
 #define MICROPY_CONFIG_ROM_LEVEL (MICROPY_CONFIG_ROM_LEVEL_EXTRA_FEATURES)

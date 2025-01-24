@@ -42,6 +42,10 @@
 #define MICROPY_CONFIG_ROM_LEVEL (MICROPY_CONFIG_ROM_LEVEL_EXTRA_FEATURES)
 #endif
 
+// Added for engine: Implementation of the machine module.
+#define MICROPY_PY_MACHINE_INCLUDEFILE "ports/webassembly/modmachine.c"
+#define MICROPY_PY_MACHINE_BARE_METAL_FUNCS     (1) // For .freq() mocking
+
 #define MICROPY_ALLOC_PATH_MAX      (256)
 #define MICROPY_PERSISTENT_CODE_LOAD (1)
 #define MICROPY_COMP_ALLOW_TOP_LEVEL_AWAIT (1)

@@ -144,6 +144,8 @@ typedef long mp_off_t;
 #define MICROPY_MACHINE_MEM_GET_READ_ADDR   mod_machine_mem_get_addr
 #define MICROPY_MACHINE_MEM_GET_WRITE_ADDR  mod_machine_mem_get_addr
 
+#define MICROPY_PY_MACHINE_BARE_METAL_FUNCS     (1) // For .freq() mocking
+
 #define MICROPY_FATFS_ENABLE_LFN       (1)
 #define MICROPY_FATFS_RPATH            (2)
 #define MICROPY_FATFS_MAX_SS           (4096)

@@ -43,6 +43,7 @@
 #endif
 
 // Added for engine: Implementation of the machine module.
+#define MICROPY_PY_MACHINE             (1)
 #define MICROPY_PY_MACHINE_INCLUDEFILE "ports/webassembly/modmachine.c"
 #define MICROPY_PY_MACHINE_BARE_METAL_FUNCS     (1) // For .freq() mocking
 

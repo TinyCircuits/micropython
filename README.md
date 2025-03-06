@@ -1,4 +1,17 @@
-[![CI badge](https://github.com/micropython/micropython/workflows/unix%20port/badge.svg)](https://github.com/micropython/micropython/actions?query=branch%3Amaster+event%3Apush) [![codecov](https://codecov.io/gh/micropython/micropython/branch/master/graph/badge.svg?token=I92PfD05sD)](https://codecov.io/gh/micropython/micropython)
+c[![CI badge](https://github.com/micropython/micropython/workflows/unix%20port/badge.svg)](https://github.com/micropython/micropython/actions?query=branch%3Amaster+event%3Apush) [![codecov](https://codecov.io/gh/micropython/micropython/branch/master/graph/badge.svg?token=I92PfD05sD)](https://codecov.io/gh/micropython/micropython)
+
+Building for Thumby
+=======================
+1. `cd micropython`
+2. `cd mpy-cross`
+3. `make CFLAGS_EXTRA="-Wno-dangling-pointer"` https://github.com/micropython/micropython/issues/11464#issuecomment-1543042388 & https://github.com/micropython/micropython/issues/10951
+4. `cd ../ports/rp2`
+5. `make submodules`
+6. `make clean`
+7. Download and extract https://developer.arm.com/-/media/Files/downloads/gnu/11.2-2022.02/binrel/gcc-arm-11.2-2022.02-aarch64-arm-none-eabi.tar.xz?rev=3789ce184378489e9704981b07530206&hash=2776792A3DB514E16F45CF88BE5D50C7
+7. `make -j8 BOARD=THUMBY PICO_TOOLCHAIN_PATH="/home/linux/Desktop/gcc-arm-11.2-2022.02-aarch64-arm-none-eabi.tar/gcc-arm-11.2-2022.02-aarch64-arm-none-eabi/bin"` <- Custom board with custom board def file for fixing too fast startup delay: https://forums.raspberrypi.com/viewtopic.php?p=2000704#p2000704
+
+
 
 The MicroPython project
 =======================

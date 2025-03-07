@@ -15,6 +15,8 @@ DOESN'T WORK:
 8. `make -j8 BOARD=THUMBY PICO_TOOLCHAIN_PATH="/home/linux/Desktop/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi.tar/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin"` <- Custom board with custom board def file for fixing too fast startup delay: https://forums.raspberrypi.com/viewtopic.php?p=2000704#p2000704
 
 
+UF2s for Thumby are created by upload the firmware produced from the above build steps, upload the assets from https://github.com/TinyCircuits/TinyCircuits-Thumby-Code-Editor/tree/master/CoreThumbyFiles using Thonny, and then running `sudo ./picotool save -r 0x10000000 0x10200000 ThumbyFirmware.uf2`.
+
 
 The MicroPython project
 =======================

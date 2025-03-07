@@ -4,7 +4,7 @@ Building for Thumby
 =======================
 1. `cd micropython`
 2. `cd mpy-cross`
-3. `make CFLAGS_EXTRA="-Wno-dangling-pointer"` https://github.com/micropython/micropython/issues/11464#issuecomment-1543042388 & https://github.com/micropython/micropython/issues/10951 & https://github.com/micropython/micropython/pull/11402
+3. `make CFLAGS_EXTRA="-Wno-dangling-pointer"` https://github.com/micropython/micropython/issues/11464#issuecomment-1543042388 & (cherry-picked this)https://github.com/micropython/micropython/issues/10951 & https://github.com/micropython/micropython/pull/11402
 4. `cd ../ports/rp2`
 5. `make submodules`
 6. `make clean`

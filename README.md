@@ -8,8 +8,11 @@ Building for Thumby
 4. `cd ../ports/rp2`
 5. `make submodules`
 6. `make clean`
-7. Download and extract https://developer.arm.com/-/media/Files/downloads/gnu/11.2-2022.02/binrel/gcc-arm-11.2-2022.02-aarch64-arm-none-eabi.tar.xz?rev=3789ce184378489e9704981b07530206&hash=2776792A3DB514E16F45CF88BE5D50C7
-7. `make -j8 BOARD=THUMBY PICO_TOOLCHAIN_PATH="/home/linux/Desktop/gcc-arm-11.2-2022.02-aarch64-arm-none-eabi.tar/gcc-arm-11.2-2022.02-aarch64-arm-none-eabi/bin"` <- Custom board with custom board def file for fixing too fast startup delay: https://forums.raspberrypi.com/viewtopic.php?p=2000704#p2000704
+7. `make BOARD=THUMBY CFLAGS=-Wno-array-bounds` https://github.com/micropython/micropython/issues/8685#issuecomment-1160910673
+
+DOESN'T WORK: 
+7. Download and extract https://developer.arm.com/-/media/Files/downloads/gnu/11.2-2022.02/binrel/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi.tar.xz?rev=99a2bce6f4464be08eca01eda13e4e96&hash=C371F8D384D7F8DC08BFE154352AA3AE
+8. `make -j8 BOARD=THUMBY PICO_TOOLCHAIN_PATH="/home/linux/Desktop/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi.tar/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin"` <- Custom board with custom board def file for fixing too fast startup delay: https://forums.raspberrypi.com/viewtopic.php?p=2000704#p2000704
 
 
 

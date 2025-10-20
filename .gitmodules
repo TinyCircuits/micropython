@@ -70,4 +70,4 @@
 	url = https://github.com/arduino/arduino-lib-mpy.git
 [submodule "tools/TinyCircuits-Tiny-Game-Engine"]
 	path = TinyCircuits-Tiny-Game-Engine
-	url = https://github.com/TinyCircuits/TinyCircuits-Tiny-Game-Engine
+	url = https://github.com/masonova1/TinyCircuits-Tiny-Game-Engine
